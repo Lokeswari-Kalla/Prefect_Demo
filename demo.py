@@ -5,7 +5,7 @@ from prefect import flow, task # Prefect flow and task decorators
 
 
 @flow(log_prints=True)
-def show_stars(github_repos: list[str]):
+def show_stars_loki(github_repos: list[str]):
     """Flow: Show the number of stars that GitHub repos have"""
 
     for repo in github_repos:
@@ -35,7 +35,7 @@ def get_stars(repo_stats: dict):
 
 # Run the flow
 if __name__ == "__main__":
-    show_stars([
+    show_stars_loki([
         "PrefectHQ/prefect",
         "pydantic/pydantic",
         "huggingface/transformers"
